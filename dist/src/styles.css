@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  width: 100%;
+  padding: 10px 20px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links a {
+  color: #000;
+  text-decoration: none;
+  transition: 600ms;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.links a:hover {
+  background: #bbb;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.Container {
+  width: 90%;
+  min-height: 60vh;
+  margin: 2vh auto;
+  background: #ddd;
+}
