@@ -134,6 +134,8 @@ async function handleLocation() {
   const route = routes[path] || routes[404];
   const html = await fetch(route).then((data) => data.text());
   
+  console.log(window.location.pathname);
+  
   document.querySelector('.Container').innerHTML = html;
   
   if(path === '/List') {
@@ -156,7 +158,10 @@ async function handleLocation() {
     document.title = 'Manga4Up | Recent Volumes Uploaded';
   } else if(path === '/manga/') {
     const MangaContainer = document.querySelector('.MangaContainer');
-    const MangaTitle = window.location.href.split('#').pop().split('/').pop().replaceAll('_', ' ');
+    //const MangaTitle = window.location.href.split('#').pop().split('/').pop().replaceAll('_', ' ');
+    const MangaTitle = window.location.href.split('#').pop().replaceAll('_', ' ');
+    
+    console.log(MangaTitle);
     
     GetOneData(MangaTitle, MangaContainer);
     document.title = `Manga4Up | ${MangaTitle}`;
@@ -169,3 +174,13 @@ window.route = route;
 window.onload = ()=> {
   handleLocation()  
 }
+
+const loading = document.querySelector('.loading');
+const Container = document.querySelector('.Container');
+
+let interval = setInterval(() => {
+  if (Container.childNodes.length !== 0) {
+    clearInterval(interval);
+    loading.style.display = 'none';
+  }
+}, 100)
