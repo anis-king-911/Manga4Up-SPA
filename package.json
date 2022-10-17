@@ -2,14 +2,14 @@
   "name": "manga4up_spa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/dist/src/main.js",
+  "type": "module",
   "engines": {
     "node": "16.x"
   },
   "scripts": {
     "start": "node index.js"
   },
-  "type": "module",
   "keywords": [],
   "author": "anis-king",
   "license": "ISC",
