@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node index.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "anis-king",
   "license": "ISC",
